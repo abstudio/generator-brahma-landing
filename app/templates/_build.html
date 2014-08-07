@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title><%= _.slugify(projectName) %></title>
+	<link rel="stylesheet" href="template/styles/main.css" />
+	<script type="text/javascript" src="<%= _.dasherize(brahmaUrl) %>inject/brahma.js"></script>
+	<script type="text/javascript" src="template/js/main.js"></script>
+	<script>
+		require.config({
+			paths: <%= _.dasherize(brahmaPaths) %>
+		});
+		Brahma(function() {
+			$(document).ready(function() {
+				Brahma("body").landing({
+					"baseUrl": "screens/"
+				})
+				.screens([
+					// here screens
+				])
+				.build(function() {
+					Brahma(function() {
+						// Here code
+						
+					},["temaplte/js/main.js"])
+				});
+				
+				// Require css
+				//requirecss([ ]);
+			});
+		}, <%= _.dasherize(brahmaRequire) %>);
+	</script>
+	<style>
+
+	</style>
+	<script>
+		Brahma(function() {
+
+		});
+	</script>
+</head>
+<body class="<%= _.slugify(projectName) %>">
+	
+</body>
+</html>

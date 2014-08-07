@@ -1,0 +1,7 @@
+language: node_js
+node_js:
+  - '0.10'
+before_install:
+  - currentfolder=${PWD##*/}
+  - if [ "$currentfolder" != 'generator-brahma-landing' ]; then cd .. && eval "mv $currentfolder generator-brahma-landing" && cd generator-brahma-landing; fi
+

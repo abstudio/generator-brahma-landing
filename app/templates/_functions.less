@@ -1,0 +1,60 @@
+// transit
+.transit (@property: all, @duration: 0.5s, @ease: ease) {
+	-webkit-transition-property: @property;
+	-webkit-transition-duration: @duration;
+    -webkit-transition-timing-function: @ease;
+
+	-o-transition-property: @property;
+	-o-transition-duration: @duration;
+    -o-transition-timing-function: @ease;
+
+    -moz-transition-property: @property;
+	-moz-transition-duration: @duration;
+    -moz-transition-timing-function: @ease;
+
+    -ms-transition-property: @property;
+	-ms-transition-duration: @duration;
+    -ms-transition-timing-function: @ease;
+
+    transition-property: @property;
+	transition-duration: @duration;
+    transition-timing-function: @ease;
+}
+
+// clear
+.clear () {
+	content: "";
+	width:100%;
+	display:block;
+	clear:both;
+}
+
+// border-radius
+
+// full
+.full () {
+	width:100%;
+	height:100%;
+}
+
+// center
+div.center,
+table.center {
+	margin:0 auto;
+}
+img.center,
+span.center,
+p.center,
+i.center,
+u.center,
+strong.center,
+article.center
+{
+	text-align:center;
+}
+
+.border-radius (@size) {
+	-webkit-border-radius: @size;
+	-moz-border-radius: @size;
+	border-radius: @size;
+}
