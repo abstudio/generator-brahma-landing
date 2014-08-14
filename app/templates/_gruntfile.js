@@ -9,7 +9,17 @@ module.exports = function(grunt) {
         },
         files: {
           // target.css file: source.less file
-          "template/styles/main.css": "template/styles/main.less"
+          "template/styles/main.css": "source/less/main.less"
+        }
+      }
+    },
+    uglify: {
+      my_target: {
+        options: {
+          mangle: false
+        },
+        files: {
+          'template/js/main.min.js': ['source/js/*.js']
         }
       }
     },

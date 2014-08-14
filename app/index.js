@@ -125,12 +125,16 @@ var BrahmaLandingGenerator = yeoman.generators.Base.extend({
   app: function () {
     this.mkdir('');
     this.mkdir('screens');
+
     this.mkdir('template');
     this.mkdir('template/styles');
     this.mkdir('template/images');
     this.mkdir('template/js');
     this.mkdir('template/vendor');
 
+    this.mkdir('source');
+    this.mkdir('source/less');
+    this.mkdir('source/js');
     // Copy less prototype
 
 
@@ -140,11 +144,11 @@ var BrahmaLandingGenerator = yeoman.generators.Base.extend({
     this.copy('_bowerrc', '.bowerrc');
     this.copy('_gruntfile.js', 'gruntfile.js');
 
-    this.copy('_functions.less', 'template/styles/functions.less');
-    this.template('_reset.less', 'template/styles/reset.less');
-    this.template('_main.less', 'template/styles/main.less');
-    this.copy('_main.css', 'template/styles/main.css');
-    this.copy('_main.js', 'template/js/main.js');
+    this.copy('_functions.less', 'source/less/functions.less');
+    this.template('_reset.less', 'source/less/reset.less');
+    this.template('_main.less', 'source/less/main.less');
+    this.copy('_main.css', 'source/less/main.css');
+    this.copy('_main.js', 'source/js/main.js');
     this.template('_master.html', 'master.html')
   }
 });
