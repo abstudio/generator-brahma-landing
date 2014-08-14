@@ -85,27 +85,27 @@ var BrahmaLandingGenerator = yeoman.generators.Base.extend({
 
         if ( this.includeJquery ) {
             this.dependencies["jquery"] = "latest";
-            brahmaPaths["jquery"] = 'template/vendors/jquery/dist/jquery.min.js';
+            brahmaPaths["jquery"] = 'template/vendor/jquery/dist/jquery.min.js';
         }
 
         if ( this.includeAngular ) {
             this.dependencies["angularjs"] = "latest";
-             brahmaPaths["angularjs"] = 'template/vendors/angularjs/angular.min.js';
+             brahmaPaths["angularjs"] = 'template/vendor/angularjs/angular.min.js';
         }
 
         if ( this.includeModernizr ) {
             this.dependencies["modernizr"] = "latest";
-             brahmaPaths["modernizr"] = 'template/vendors/modernizr/modernizr.js';
+             brahmaPaths["modernizr"] = 'template/vendor/modernizr/modernizr.js';
         }
 
         if ( this.includejQueryPlaceholder) { // not with angular
             this.dependencies["jquery.placeholder"] = "latest";
-            brahmaPaths["jquery.placeholder"] = 'template/vendors/jquery.placeholder/jquery.placeholder.min.js';
+            brahmaPaths["jquery.placeholder"] = 'template/vendor/jquery.placeholder/jquery.placeholder.min.js';
         }
 
         if ( this.includejQueryCookie) {
             this.dependencies["jquery-cookie"] = "latest";
-           brahmaPaths["jquery-cookie"] = 'template/vendors/jquery-cookie/jquery.cookie.js'; 
+           brahmaPaths["jquery-cookie"] = 'template/vendor/jquery-cookie/jquery.cookie.js'; 
         }
         
         // Creater Brahma require list
@@ -141,10 +141,11 @@ var BrahmaLandingGenerator = yeoman.generators.Base.extend({
     this.copy('_gruntfile.js', 'gruntfile.js');
 
     this.copy('_functions.less', 'template/styles/functions.less');
-    this.copy('_main.less', 'template/styles/main.less');
+    this.template('_reset.less', 'template/styles/reset.less');
+    this.template('_main.less', 'template/styles/main.less');
     this.copy('_main.css', 'template/styles/main.css');
     this.copy('_main.js', 'template/js/main.js');
-    this.template('_build.html', 'build.html')
+    this.template('_master.html', 'master.html')
   }
 });
 
