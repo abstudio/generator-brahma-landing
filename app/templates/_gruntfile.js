@@ -26,7 +26,7 @@ module.exports = function(grunt) {
     watch: {
       styles: {
         files: ['source/less/**/*.less'], // which files to watch
-        tasks: ['less'],
+        tasks: ['less','uglify'],
         options: {
           nospawn: true
         }
@@ -36,5 +36,8 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.registerTask('default', ['watch']);
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+
+
+  grunt.registerTask('default', ['watch', 'less', 'uglify']);
 };

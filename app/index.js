@@ -143,9 +143,10 @@ var BrahmaLandingGenerator = yeoman.generators.Base.extend({
     this.template('_bower.json', 'bower.json');
     this.copy('_bowerrc', '.bowerrc');
     this.copy('_gruntfile.js', 'gruntfile.js');
+    this.copy('_.htaccess', '.htaccess');
 
     this.copy('_functions.less', 'source/less/functions.less');
-    this.template('_reset.less', 'source/less/reset.less');
+   
     this.template('_main.less', 'source/less/main.less');
     this.copy('_main.css', 'source/less/main.css');
     this.copy('_main.js', 'source/js/main.js');
